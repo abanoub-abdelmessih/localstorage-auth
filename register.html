@@ -21,8 +21,10 @@
                 id="registerUsername"
                 placeholder="Enter your username"
                 required
-                min="4"
               />
+              <div class="invalid-feedback bg-danger text-white rounded-3 p-3">
+                Please enter at least 3 characters.
+              </div>
             </div>
 
             <div class="mb-3">
@@ -36,6 +38,9 @@
                 placeholder="Enter your email"
                 required
               />
+              <div class="invalid-feedback bg-danger text-white rounded-3 p-3">
+                Please enter valid email
+              </div>
             </div>
 
             <div class="mb-3">
@@ -46,8 +51,10 @@
                 id="registerPassword"
                 placeholder="Enter your password"
                 required
-                min="8"
               />
+              <div class="invalid-feedback bg-danger text-white rounded-3 p-3">
+                Please enter at least 5 characters.
+              </div>
             </div>
 
             <button type="submit" class="btn btn-primary w-100">

@@ -18,8 +18,16 @@ function registration(e) {
   var email = emailInput.value.trim();
   var password = passwordInput.value.trim();
 
-  if (!name || !email | password) {
-    alert("enter valid data");
+  if (name.length < 3) {
+    nameInput.classList.add("is-invalid");
+    return;
+  }
+  if (email.indexOf("@") == -1) {
+    emailInput.classList.add("is-invalid");
+    return;
+  }
+  if (password.length < 8) {
+    passwordInput.classList.add("is-invalid");
     return;
   }
 
