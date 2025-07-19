@@ -93,3 +93,22 @@ function login(e) {
     alert("Incorrect email or password");
   }
 }
+
+// LOGOUT FUNCTION
+function logout() {
+  localStorage.removeItem("loggedInUser");
+  window.location.href = "index.html";
+}
+
+// PROTECTED ROUTE
+if (window.location.pathname.includes("home.html")) {
+  var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  if (!loggedInUser) {
+    window.location.href = "index.html";
+  } else {
+    var usernameSpan = document.getElementById("username");
+    if (usernameSpan) {
+      usernameSpan.textContent = loggedInUser.name;
+    }
+  }
+}
