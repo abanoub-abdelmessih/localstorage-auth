@@ -1,3 +1,4 @@
+// REGISTRATION FUNCTION
 var registerForm = document.getElementById("registerForm");
 var localStorageUsers = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -49,4 +50,46 @@ function registration(e) {
   passwordInput.value = "";
 
   window.location.href = "index.html";
+}
+
+// LOGIN FUNCTION
+var loginForm = document.getElementById("loginForm");
+
+if (loginForm) {
+  loginForm.addEventListener("submit", login);
+}
+function login(e) {
+  e.preventDefault();
+
+  // get login inputs
+  var emailInput = document.getElementById("loginEmail");
+  var passwordInput = document.getElementById("loginPassword");
+
+  // to rest inputs after login
+  var email = emailInput.value.trim();
+  var password = passwordInput.value.trim();
+
+  if (!email | password) {
+    alert("enter valid data");
+    return;
+  }
+  var foundUser = null;
+
+  for (var i = 0; i < localStorageUsers.length; i++) {
+    if (
+      localStorageUsers[i].email === email &&
+      localStorageUsers[i].password === password
+    ) {
+      foundUser = localStorageUsers[i];
+      break;
+    }
+  }
+
+  if (foundUser) {
+    alert("Login successful");
+    localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+    window.location.href = "home.html";
+  } else {
+    alert("Incorrect email or password");
+  }
 }
