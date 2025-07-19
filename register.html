@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register-page</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h1 class="text-center mb-4">Register Page</h1>
+
+          <form id="registerForm" class="border p-4 rounded shadow-sm bg-light">
+            <div class="mb-3">
+              <label for="registerUsername" class="form-label">User Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="registerUsername"
+                placeholder="Enter your username"
+                required
+                min="4"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="registerEmail" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="registerEmail"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="registerPassword"
+                placeholder="Enter your password"
+                required
+                min="8"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+              Register
+            </button>
+
+            <div class="text-center mt-3">
+              <p>
+                already have an account?
+                <a href="index.html" class="text-decoration-none">login here</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
