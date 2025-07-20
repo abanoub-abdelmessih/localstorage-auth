@@ -77,10 +77,11 @@ function login(e) {
   var email = emailInput.value.trim();
   var password = passwordInput.value.trim();
 
-  if (!email | password) {
-    alert("enter valid data");
+  if (!email || !password) {
+    alert("Please enter both email and password");
     return;
   }
+
   var foundUser = null;
 
   for (var i = 0; i < localStorageUsers.length; i++) {
